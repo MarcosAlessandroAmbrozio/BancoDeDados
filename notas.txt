@@ -1,0 +1,36 @@
+Insert Into Cidadao(Genero_idGenero, Escolaridade_idEscolaridade,Localidade_idLocalidade,Moradia_idMoradia, Nome,
+ Nascimento, Luz, Agua, Veiculo, Renda, Nucleo) values
+(1,1,1,1,'Mario Fagundes', '1999-01-11', 'Sim', 'Sim','sim', 2000, 2);
+Insert Into Cidadao(Genero_idGenero, Escolaridade_idEscolaridade,Localidade_idLocalidade,Moradia_idMoradia, Nome,
+ Nascimento, Luz, Agua, Veiculo, Renda, Nucleo) values
+(1,2,1,2,'Joao Kleber', '1998-02-31', 'Sim', 'Sim','sim', 2000, 2);
+Insert Into Cidadao(Genero_idGenero, Escolaridade_idEscolaridade,Localidade_idLocalidade,Moradia_idMoradia, Nome,
+ Nascimento, Luz, Agua, Veiculo, Renda, Nucleo) values
+(1,2,3,3,'Marcio da Silva', '1997-03-23', 'Sim', 'Sim','sim', 2000, 2);
+Insert Into Cidadao(Genero_idGenero, Escolaridade_idEscolaridade,Localidade_idLocalidade,Moradia_idMoradia, Nome,
+ Nascimento, Luz, Agua, Veiculo, Renda, Nucleo) values
+(1,4,3,4,'Pedro Almeida', '1996-04-24', 'Sim', 'Sim','Não', 3000, 3);
+Insert Into Cidadao(Genero_idGenero, Escolaridade_idEscolaridade,Localidade_idLocalidade,Moradia_idMoradia, Nome,
+ Nascimento, Luz, Agua, Veiculo, Renda, Nucleo) values
+(1,4,5,5,'Caio Fernandes', '1995-05-25', 'Sim', 'Sim','Não', 3000, 3);
+Insert Into Cidadao(Genero_idGenero, Escolaridade_idEscolaridade,Localidade_idLocalidade,Moradia_idMoradia, Nome,
+ Nascimento, Luz, Agua, Veiculo, Renda, Nucleo) values
+(2,3,7,6,'Micheli de Barba', '1994-06-17', 'Sim', 'Sim','Não', 1000, 3);
+Insert Into Cidadao(Genero_idGenero, Escolaridade_idEscolaridade,Localidade_idLocalidade,Moradia_idMoradia, Nome,
+ Nascimento, Luz, Agua, Veiculo, Renda, Nucleo) values
+(2,3,7,1,'Evylin Tormen', '1993-07-26', 'Sim', 'Sim','Não', 1000, 4);
+Insert Into Cidadao(Genero_idGenero, Escolaridade_idEscolaridade,Localidade_idLocalidade,Moradia_idMoradia, Nome,
+ Nascimento, Luz, Agua, Veiculo, Renda, Nucleo) values
+(2,3,7,2,'Julia Rosseto', '1992-08-27', 'Não', 'Sim','Não', 1000, 4);
+Insert Into Cidadao(Genero_idGenero, Escolaridade_idEscolaridade,Localidade_idLocalidade,Moradia_idMoradia, Nome,
+ Nascimento, Luz, Agua, Veiculo, Renda, Nucleo) values
+(2,5,8,3,'Vanessa Fidelis', '1991-09-28', 'Não', 'Sim','Não', 5000, 5);
+Insert Into Cidadao(Genero_idGenero, Escolaridade_idEscolaridade,Localidade_idLocalidade,Moradia_idMoradia, Nome,
+ Nascimento, Luz, Agua, Veiculo, Renda, Nucleo) values
+(3,5,4,4,'Joao Gabriela', '1990-11-29', 'Não', 'Não','Não', 1000, 5);
+Insert Into Cidadao(Genero_idGenero, Escolaridade_idEscolaridade,Localidade_idLocalidade,Moradia_idMoradia, Nome,
+ Nascimento, Luz, Agua, Veiculo, Renda, Nucleo) values
+(3,7,4,5,'Serjio Claudete', '1999-12-19', 'Não', 'Não','Não', 1000, 5);
+Insert Into Cidadao(Genero_idGenero, Escolaridade_idEscolaridade,Localidade_idLocalidade,Moradia_idMoradia, Nome,
+ Nascimento, Luz, Agua, Veiculo, Renda, Nucleo) values
+(2,6,2,6,'Marcia da silva', '1989-02-20', 'Não', 'Não','Não', 5000, 1);

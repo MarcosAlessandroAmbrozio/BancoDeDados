@@ -1,0 +1,207 @@
+Inserir as Unidades Federativas
+
+Insert Into UF(Nome, Sigla) Values
+('Rio Grande do Sul', 'RS'),
+('Santa Catarina', 'SC'),
+('Paraná', 'PR'),
+('São Paulo', 'SP'),
+('Mato Grosso do Sul', 'MS'),
+('Minas Gerais', 'MG'),
+('Rio de Janeiro', 'RJ'),
+('Pará', 'PA');
+
+Inserir as Localidades
+
+Insert Into Localidade(uf_iduf, Nome, area) Values
+(1,'Porto Alegre', 100000),
+(1,'Santo Ângelo', 50000),
+(2,'Florianópolis', 90000),
+(2,'Chapecó', 40000),
+(3,'Curitiba', 110000),
+(3,'Foz do Iguaçu', 65000),
+(4,'São Paulo', 300000),
+(4,'Guarulhos', 35000),
+(5,'Campo Grande', 200000),
+(5,'Bonito', 15000),
+(6,'Belo Horizonte', 225000),
+(6,'Governador Valadares', 35000),
+(7,'Rio de Janeiro', 158000),
+(7,'Niterói', 35000),
+(8,'Belém', 55000),
+(8,'Santarém', 35000);
+
+Inserir Moradias
+
+Insert Into Moradia(Nome) Values
+('Apartamento'),
+('Barraco'),
+('Casa'),
+('Hotel'),
+('MotorHome'),
+('Viaduto');
+
+Inserir Escolaridades
+
+Insert Into Escolaridade(Nome) Values
+('Analfabeto'),
+('Alfabetizado'),
+('Fundamental'),
+('Médio'),
+('Graduação'),
+('Mestrado'),
+('Doutorado');
+
+Inserir Generos
+
+Insert Into Genero(Nome) Values
+('Masculino'), 
+('Feminino'), 
+('Não binário');
+
+Inserir Cidadão
+
+Insert Into Cidadao(Genero_idGenero, Escolaridade_idEscolaridade, Localidade_idLocalidade, 
+Moradia_idMoradia, Nome, Nascimento, Luz, Agua, Veiculo, Renda, Nucleo) Values
+
+(1, 2, 9, 2, 'João Antunes da Costa', '1994-05-21', 'Sim', 'Não', 'Não', 500, 4),
+
+
+(1, 1, 1, 3, 'João Carlos', '1995-06-22', 'Sim', 'Sim', 'Sim', 1500, 3),
+
+(1, 2, 2, 5, 'Mauricio Meireles', '1996-04-22', 'Sim', 'Sim', 'Não', 600, 2),
+
+
+(1, 2, 5, 4, 'Marcos Antunes', '1992-03-22', 'Não', 'Sim', 'Não', 900, 3),
+
+(1, 3, 6, 1, 'Lorenzo Almeida', '1993-08-22', 'Sim', 'Sim', 'Sim', 3000, 5),
+
+
+(1, 3, 10, 3, 'Lucas Oliveira', '1991-10-22', 'Sim', 'Sim', 'Sim', 950, 3),
+
+
+(2, 4, 13, 4, 'Marcia Vertuoso', '1994-01-22', 'Sim', 'Sim', 'Não', 700, 2),
+
+(2, 4, 14, 1, 'Julia Pereira', '1991-06-22', 'Sim', 'Sim', 'Sim', 870, 2),
+
+(2, 4, 13, 3, 'Leticia Badin', '1998-05-22', 'Não', 'Sim', 'Não', 1200, 4),
+
+
+(2, 5, 15, 6, 'Natalia Moura', '1999-09-22', 'Não', 'Não', 'Não', 1700, 4), 
+ 
+
+(3, 5, 7, 3, 'Vivian Moreira', '1998-12-22', 'Não', 'Não', 'Não', 2200, 5),  
+ 
+(3, 7, 8, 6, 'Nathan Oliveira', '1994-11-22', 'Não', 'Não', 'Não', 3400, 5);  
+
+
+Comandos de Seleção
+
+Select Loc.idLocalidade,
+Loc.Nome as 'Localidade',
+Loc.Area as 'Área(km²)',
+
+Uf.idUf,
+Uf.Nome as 'Unid. Federativa',
+Uf.Sigla
+
+From Localidade as Loc,UF 
+where Loc.uf_iduf=uf.iduf
+Order By Uf.Nome,Loc.Nome;
+
+Select  Cid.Nome as 'Cidadão',
+	Cid.Localidade_idLocalidade,
+	Loc.Nome as 'Localidade',
+        uf.Nome as 'Unid. Federativa',
+        uf.Sigla,
+	Cid.Moradia_idMoradia,
+	Mor.Nome as 'Moradia'
+From    Cidadao as Cid, Localidade as Loc, Moradia as Mor, uf
+where   Cid.Localidade_idLocalidade=Loc.idLocalidade
+And     Cid.Moradia_idMoradia=Mor.idMoradia
+And     Loc.uf_iduf= uf.iduf ;
+
+Select  Cidadao.nome as 'Cidadao',
+	Cidadao.Localidade_idlocalidade,
+	Localidade.nome as 'localidade',
+	UF.nome as 'UF',
+	Escolaridade.Nome as 'Escolaridade'
+From    Cidadao, localidade, UF, Escolaridade
+Where   Cidadao.Localidade_idlocalidade=Localidade_idlocalidade
+And	Localidade.Uf_idUF=uf.idUF
+And	Uf.Sigla='SC'
+And 	Cidadao.Escolaridade_idEscolaridade=Escolaridade_idEscolaridade
+And	Escolaridade.Nome<>'Médio'
+	
+
+Select COUNT(idCidadao) as 'total de entrevistados'
+From Cidadao
+
+Select COUNT(idLocalidade) as 'total de localidades'
+From localidade
+
+Select COUNT(Area) as 'total de áreas'
+From localidade
+
+Select COUNT(idCidadao) as 'total de entrevistados'
+From   Cidadao, Localidade, UF
+where  Cidadao.Localidade_idLocalidade=Localidade.idLocalidade
+And    Localidade.UF_idUF=UF.idUF
+And    UF.Sigla='SC'
+
+Select COUNT(idCidadao) as 'total de entrevistados'
+From   Cidadao, Localidade, UF, Escolaridade,Moradia
+where  Cidadao.Localidade_idLocalidade=Localidade.idLocalidade
+And    Localidade.UF_idUF=UF.idUF
+And    UF.Sigla='SC'
+And    Cidadao.Escolaridade_idEscolaridade=Escolaridade.idEscolaridade
+And    Escolaridade_idEscolaridade = 4
+And    Cidadao.Moradia_idMoradia=Moradia.idMoradia
+And    Moradia_idMoradia = 3
+And    Cidadao.Veiculo = 'sim'
+
+Select COUNT(idCidadao) as 'total de entrevistados que tem veiculo'
+From   Cidadao
+Where  Cidadao.Veiculo = 'sim'
+
+//somar area da localidade
+Select SUM(Area) as 'Soma de Área(km²)'
+From   Localidade,UF
+Where  Localidade.UF_idUF=UF.idUF
+And    Uf.Sigla='SP'
+
+Select SUM(Area) as 'Soma de Área(km²)'
+From   Localidade,UF
+Where  Localidade.UF_idUF=UF.idUF
+And    Uf.Sigla IN ('SP', 'SC')
+
+Select SUM(renda) as 'Total renda'
+From   cidadao, Localidade, uf
+Where  Localidade.UF_idUF=UF.idUF
+And    Uf.Sigla IN ('SP', 'SC')
+
+//calcular media 
+Select AVG(renda) as 'Media de renda R$'
+From cidadao, Localidade, Uf
+Where  Localidade.UF_idUF=UF.idUF
+And    Uf.Sigla = 'SP'
+
+// faixa de valores
+Select Count(idCidadao) as 'qtde pessoas com renda<1000'
+from cidadao
+where Cidadao.renda<1000
+
+Select Count(idCidadao) as 'qtde pessoas com renda<1000'
+from cidadao
+where Cidadao.renda>1000
+
+Select Count(idCidadao) as 'qtde pessoas com renda<1000'
+from cidadao
+where Cidadao.renda>=1000 and renda<=2000
+
+SELECT TIMESTAMPDIFF(YEAR, NASCIMENTO, NOW()) AS DIFFERENCE FROM CIDADAO
+
+SELECT CIDADAO.NOME,
+	CIDADAO.NASCIMENTO, 
+	TIMESTAMPDIFF(YEAR, NASCIMENTO, NOW()) AS DIFFERENCE
+FROM CIDADAO
+

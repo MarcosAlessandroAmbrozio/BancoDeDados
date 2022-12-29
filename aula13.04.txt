@@ -1,0 +1,26 @@
+
+
+comandos de seleção 
+select Loc.idLocalidade,
+Loc.Nome as 'Localidade', 
+Loc.Area as 'Areas (km²)',
+Uf.idUf,
+Uf.Nome as 'Unid.Federativa',
+Uf.Sigla
+From Localidade as Loc, Uf
+Where Loc.Uf_idUf=Uf.idUf
+Order by Uf.Nome, Loc.Nome
+
+Select Cid.Nome as 'Cidadao',
+       Cid.Localidade_idLocalidade,
+       Loc.Nome as 'Localidade',
+       Uf.Nome as 'Unid.Federativa',
+       Uf.sigla,
+       Cid.Moradia_idMoradia,
+       Mor.Nome as 'Moradia'
+
+From  Cidadao as Cid, Localidade as Loc, Moradia as Mor, Uf 	
+Where Cid.Localidade_idLocalidade=Loc.idLocalidade
+and   Cid.Moradia_idMoradia=Mor.idMoradia
+and Loc.Uf_idUf=Uf.idUf
+
